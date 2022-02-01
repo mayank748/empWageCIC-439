@@ -18,14 +18,13 @@ function salaryFunction(){
 	echo $totalAmount
 }
 
-if [ $randomValue -eq $IS_PRESENT ]
-then
+case $randomValue in 
+	$IS_PRESENT)
 	echo "Employee is presnet."
-	echo "total amount " `salaryFunction TOTAL_WORKING_HOUR AMOUNT_PAID_PER_HOUR`
-elif [ $randomValue -eq $IS_PART_TIME ]
-	then
+	echo "total amount " `salaryFunction TOTAL_WORKING_HOUR AMOUNT_PAID_PER_HOUR`;;
+	$IS_PART_TIME)
 	echo "Employee is doing parttime."
-	echo "total amount " `salaryFunction TOTAL_WORKING_HOUR_FOR_PART_TIME AMOUNT_PAID_PER_HOUR`
-else
+	echo "total amount " `salaryFunction TOTAL_WORKING_HOUR_FOR_PART_TIME AMOUNT_PAID_PER_HOUR`;;
+	*)
 	echo "Employee is absent."
-fi
+esac
